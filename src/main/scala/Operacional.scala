@@ -15,8 +15,8 @@ object Operacional {
     }
     val sc = new SparkContext(conf)
 
-    val rutaDatos = "/sanitas/resultados/adn/" //URL a identificador de taxonomía
-    val tabla = "usuarios"
+    val rutaDatos = args(0) //URL a identificador de taxonomía
+    val tabla = args(1)
 
     val datos = sc.textFile(rutaDatos).map(x => x.split(";"))
 
